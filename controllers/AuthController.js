@@ -13,19 +13,18 @@ userController.register = function(req, res) {
 };
 
 userController.doRegister = function(req, res) {
-  User.register(new User({ name: req.body.name, section: req.body.section, xsmail: req.body.xsmail, type: 'Standard' }), req.body.password, function(err, user) {
+  //if()
+  User.register(new User({ name: req.body.name, username: req.body.username, studentnum: req.body.number }), req.body.password, function(err, user) {
     if (err) {
-      return res.render('register', { user : user });
+      return res.render('register',{message: 'error'});
     }
 
-    passport.authenticate('local')(req, res, function () {
-      res.redirect('/');
-    });
+    res.redirect('/')
   });
 };
 
 userController.login = function(req,res){
-	hbs.render('login');
+	res.render('login');
 };
 
 userController.doLogin = function(req, res){
@@ -38,5 +37,7 @@ userController.logout = function(req,res) {
 	req.logout();
 	res.redirect('/');
 };
+
+
 
 module.exports = userController;
