@@ -4,12 +4,13 @@ var User = require("../models/User");
 
 var userController = {};	
 
+
 userController.home = function(req,res){
 	res.render('index', {user : req.user});
 };
 
 userController.register = function(req, res) {
-  res.render('register');
+  res.render('register', {user: req.user});
 };
 
 userController.doRegister = function(req, res) {

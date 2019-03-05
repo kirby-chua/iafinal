@@ -2,13 +2,15 @@ var express = require('express');
 var router = express.Router();
 var attendance = require("../controllers/attendance.js");
 
-router.get('/', attendance.student);
+router.post('/', attendance.student);
 
-router.get('/newstudent', attendance.newstudent);
+router.get('/add', attendance.add);
 
-router.get('/newstudent', attendance.donewstudent);
+router.get('/view', attendance.view);
 
-router.get('/time', attendance.time);
+router.post('/add', attendance.doAdd);
+
+router.post('/time', attendance.time);
 
 
 module.exports = router;

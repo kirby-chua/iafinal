@@ -7,15 +7,24 @@ attendance.student = function (req,res){
 }
 
 attendance.time = function(req,res){
-  res.send('idk')
+	var date = req.body.date;
+	var d1 = new Date(date + " "+ req.body.timeout);
+	var d2 = new Date(date + " "+ req.body.timein)
+	var diff=(d1.getTime()-d2.getTime())/60000;
+	console.log("time"+ diff);
+	res.redirect('/');
 }
 
-attendance.newstudent = function(req,res){
-  res.render('newstudent')
+attendance.add = function(req,res){
+  res.render('newstudent',{user : req.user});
 }
 
-attendance.donewstudent = function(req,res){
-  res.send('newstudent')
+attendance.doAdd = function(req,res){
+  res.redirect('/');
+}
+
+attendance.view = function(req,res){
+	res.render('view',{user : req.user})
 }
 
 

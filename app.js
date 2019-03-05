@@ -44,7 +44,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/', index);
-app.use('/student', student);
+app.use('/', student);
 app.use('/users', users);
 
 // catch 404 and forward to error handler

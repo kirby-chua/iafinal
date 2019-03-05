@@ -1,23 +1,28 @@
+<br>
 <div class="container-fluid" align=center>
-	<div>
-		Record Attendance<br>
-		<form action="/student/time" method="post">
+	<div class="row">
+	<div class="col-sm-6">
+		<h4>Record Attendance</h1><br>
+		<form action="/time" method="post">
 			<input type="text" name="name" placeholder="Name"><br>
 			<input type="text" name="number" placeholder="Student Number"><br>
-			Date and Time In:<br>
-			<input type="datetime-local" name="timein"></input><br>
-			Date and Time Out:<br>
-			<input type="datetime-local" name="timeout"></input><br>
-			<button type="submit" id="login">Record Attendance</button>
+			Date Today:<br>
+			<input type="date" name="date"></input><br>
+			Time In:<br>
+			<input type="time" name="timein"></input><br>
+			Time Out:<br>
+			<input type="time" name="timeout"></input><br>
+			<button type="submit" id="login">View Attendance</button>
 		</form>
 	</div>
 	<br>
-	<div>
-		View Attendance<br>
-		<form action="/student" method="post">
+	<div class="col-sm-6">
+		<h4>View Attendance</h1><br>
+		<form action="/" method="post">
 			<input type="text" name="name" placeholder="Name"><br>
 			<input type="text" name="number" placeholder="Student Number"><br>
 			<button type="submit" value="Submit">Record Attendance</button>
 		</form>
+	</div>
 	</div>
 </div>
