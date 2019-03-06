@@ -1,0 +1,39 @@
+{{#if user}}
+<div class="container-fluid">
+	Approve Attendance
+	<table class = "table">
+		<thead>
+			<tr>
+				<th> Name </th>
+				<th> Student Number </th>
+				<th> Date (Year-Month-Day)</th>
+				<th> Time In </th>
+				<th> Time Out </th>
+				<th> Time Worked (Minutes) </th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+		{{#each student}}
+			<tr>
+							
+					<td>{{this.name}}</td>
+					<td>{{this.number}}</td>	
+					<td>{{this.date}}</td>
+					<td>{{this.timein}}</td>
+					<td>{{this.timeout}}</td>
+					<td>{{this.time}}</td>
+					<form method="post" action='/approve'>
+						<input type="hidden" name="number" value={{this.number}}>
+						<td><button type="submit">Approve</button></td>
+					</form>
+					<form method="post" action='/disapprove'>
+						<input type="hidden" name="number" value={{this.number}}>
+						<td><button type="submit">Disapprove</button></td>
+					</form>
+			</tr>
+		{{/each}}
+	</table>
+	<a href='/'>Back</a>
+</div>
+{{/if}}

@@ -1,6 +1,7 @@
 var mongoose = require("mongoose");
 var passport = require("passport");
 var User = require("../models/User");
+var Student = require("../models/Student");
 
 var userController = {};	
 
@@ -19,7 +20,10 @@ userController.doRegister = function(req, res) {
     if (err) {
       return res.render('register',{message: 'error'});
     }
-
+  var newstudent = new Student({name: req.body.name, number: req.body.number, time: 0});
+  newstudent.save(function(err){
+    if(err) throw err;
+  })
     res.redirect('/')
   });
 };

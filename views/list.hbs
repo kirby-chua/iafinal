@@ -1,0 +1,21 @@
+{{#if user}}
+<div class="container-fluid">
+	LIST OF ALL STUDENTS AND ATTENDANCE
+	<table class = "table">
+		<thead>
+			<tr>
+				<th> Name </th>
+				<th> Student Number </th>
+			</tr>
+		</thead>
+		{{#each student}}
+			<tr>			
+				<td>{{this.name}}</td>
+				<td>{{this.number}}</td>	
+				<td>{{this.time}}</td>
+			</tr>
+		{{/each}}
+	</table>
+	<a href='/'>Back</a>
+</div>
+{{/if}}

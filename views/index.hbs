@@ -12,17 +12,18 @@
 			<input type="time" name="timein"></input><br>
 			Time Out:<br>
 			<input type="time" name="timeout"></input><br>
-			<button type="submit" id="login">View Attendance</button>
+			<button type="submit" id="login">Record Attendance</button>
 		</form>
+		{{record}}
 	</div>
 	<br>
 	<div class="col-sm-6">
 		<h4>View Attendance</h1><br>
-		<form action="/" method="post">
-			<input type="text" name="name" placeholder="Name"><br>
+		<form action="/view" method="post">
 			<input type="text" name="number" placeholder="Student Number"><br>
-			<button type="submit" value="Submit">Record Attendance</button>
+			<button type="submit" value="Submit">View Attendance</button>
 		</form>
+		{{view}}
 	</div>
 	</div>
 </div>

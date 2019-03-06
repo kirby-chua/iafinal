@@ -1,5 +1,23 @@
-{{#if user}}
-
-LIST OF ALL STUDENTS AND ATTENDANCE
-
-{{/if}}
+<div class="container-fluid">
+	<h4>{{attendance.0.name}}'s Attendance</h3><br>
+	<h4>Total Time Spent Working {{time}} Minutes</h3>
+	<table class = "table">
+		<thead>
+			<tr>
+				<th> Date (Year-Month-Day) </th>
+				<th> Time in </th>
+				<th> Time Out </th>
+				<th> Time Worked (Minutes) </th>
+			</tr>
+		</thead>
+		{{#each attendance}}
+			<tr>			
+				<td>{{this.date}}</td>
+				<td>{{this.timein}}</td>	
+				<td>{{this.timeout}}</td>
+				<td>{{this.time}}</td>
+			</tr>
+		{{/each}}
+	</table>
+	<a href='/'>Back</a>
+</div>
