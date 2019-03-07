@@ -6,6 +6,9 @@
 			<tr>
 				<th> Name </th>
 				<th> Student Number </th>
+				<th> Time Worked (Minutes)</th>
+				<th></th>
+				<th></th>
 			</tr>
 		</thead>
 		{{#each student}}
@@ -13,6 +16,14 @@
 				<td>{{this.name}}</td>
 				<td>{{this.number}}</td>	
 				<td>{{this.time}}</td>
+				<td><form action='/view' method="post">
+					<input type="hidden" name="number" value={{this.number}}>
+					<td><button type="submit">View</button></td>
+				</form></td>
+				<td><form action='/remove' method="post">
+					<input type="hidden" name="number" value={{this.number}}>
+					<td><button type="submit">Remove Student</button></td>
+				</form></td>
 			</tr>
 		{{/each}}
 	</table>

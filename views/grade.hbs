@@ -1,0 +1,62 @@
+{{#if user}}
+<div class="container-fluid">
+	Grade Rubric
+	<table class = "table">
+		<thead>
+			<tr>
+				<th> Grade </th>
+				<th> Time Requirement (Minutes) </th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tr>
+			<td>O</td>
+			<td>{{grade.O}}</td>
+			<form action='/grade' method="post">
+				<input type="hidden" name="grade" value='O'>
+				<td><input type=number name="time" placeholder="New Time Requirement"></td>
+				<td><button type=submit>Change</button></td>
+			</form>
+
+		</tr>
+		<tr>
+			<td>V</td>
+			<td>{{grade.V}}</td>
+			<form action='/grade' method="post">
+				<input type="hidden" name="grade" value='V'>
+				<td><input type=number name="time" placeholder="New Time Requirement"></td>
+				<td><button type=submit>Change</button></td>
+			</form>
+		</tr>
+		<tr>
+			<td>G</td>
+			<td>{{grade.G}}</td>
+			<form action='/grade' method="post">
+				<input type="hidden" name="grade" value='G'>
+				<td><input type=number name="time" placeholder="New Time Requirement"></td>
+				<td><button type=submit>Change</button></td>
+			</form>
+		</tr>
+		<tr>
+			<td>S</td>
+			<td>{{grade.S}}</td>
+			<form action='/grade' method="post">
+				<input type="hidden" name="grade" value='S'>
+				<td><input type=number name="time" placeholder="New Time Requirement"></td>
+				<td><button type=submit>Change</button></td>
+			</form>
+		</tr>
+		<tr>
+			<td>U</td>
+			<td>{{grade.U}}</td>
+			<form action='/grade' method="post">
+				<input type="hidden" name="grade" value='U'>
+				<td><input type=number name="time" placeholder="New Time Requirement"></td>
+				<td><button type=submit>Change</button></td>
+			</form>
+		</tr>
+	</table>
+	<a href='/'>Back</a>
+</div>
+{{/if}}

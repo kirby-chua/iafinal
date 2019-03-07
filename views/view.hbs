@@ -1,6 +1,44 @@
 <div class="container-fluid">
-	<h4>{{attendance.0.name}}'s Attendance</h3><br>
-	<h4>Total Time Spent Working {{time}} Minutes</h3>
+	<div class="row">
+		<div class="col-sm-4">
+			<h4>{{attendance.0.name}}'s Attendance</h4><br>
+			<h4>Total Time Spent Working {{time}} Minutes</h4>
+			<h4>Grade: {{score}}</h4>
+		</div>
+		<div class="col-sm-6">
+			<h4>Grade Rubric</h4>
+			<table class = "table">
+				<thead>
+					<tr>
+						<th> Grade </th>
+						<th> Time Requirement (Minutes) </th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tr>
+					<td>O</td>
+					<td>{{grade.O}}</td>
+				</tr>
+				<tr>
+					<td>V</td>
+					<td>{{grade.V}}</td>
+				</tr>
+				<tr>
+					<td>G</td>
+					<td>{{grade.G}}</td>
+				</tr>
+				<tr>
+					<td>S</td>
+					<td>{{grade.S}}</td>
+				</tr>
+				<tr>
+					<td>U</td>
+					<td>{{grade.U}}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
 	<table class = "table">
 		<thead>
 			<tr>

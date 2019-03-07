@@ -19,4 +19,10 @@ router.post('/approve', attendance.doApprove);
 
 router.post('/disapprove', attendance.disapprove);
 
+router.post('/remove', attendance.remove);
+
+router.get('/grade', attendance.grade);
+
+router.post('/grade', attendance.doGrade);
+
 module.exports = router;
