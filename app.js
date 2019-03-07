@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/node-auth')
+mongoose.connect(process.env.MONGODB_URI||'mongodb://localhost:27017/node-auth')
 	.then(()=> console.log('connection sucessful'))
 	.catch((err) => console.err());
 
